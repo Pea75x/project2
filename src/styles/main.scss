@@ -4,3 +4,58 @@
 body {
   font-family: 'Harry Potter', sans-serif;
 }
+
+.card {
+  width: calc(25% - 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 10px;
+
+  h2 {
+    font-size: 25px;
+  }
+}
+.cardImage {
+  width: 80%;
+}
+.card-containers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border-radius: 5px;
+
+  .griffindor {
+  }
+  .slytherin {
+  }
+}
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 5px 10px #888888;
+
+  h1 {
+    font-size: 40px;
+    padding: 20px;
+  }
+}
+
+#container-Slytherin {
+  background-color: green;
+}
+#container-Gryffindor {
+  background-color: red;
+}
+#container-hufflepuff {
+  background-color: yellow;
+}
+#container-Ravenclaw {
+  background-color: blue;
+}
+#mainPage-Ravenclaw {
+  background-color: lightblue;
+}

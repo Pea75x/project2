@@ -27,34 +27,40 @@ function Classmates() {
   return (
     <>
       <Nav />
+      <section className='main-page' id={'mainPage-' + currentHouse}>
+        <div className='container' id={'container-' + currentHouse}>
+          <h1 className='wizard-title'>Members of {currentHouse}</h1>
+          <div className='card-containers'>
+            {!classmates ? (
+              <p>Loading...</p>
+            ) : (
+              classmates.map((member, i) => (
+                <div className='card' key={i}>
+                  <h2>{member.name}</h2>
+                  {!member.image ? (
+                    <img
+                      src={require('../assets/houseCrests/' +
+                        currentHouse +
+                        '.webp')}
+                      alt={currentHouse + ' crest'}
+                      className='cardImage'
+                    />
+                  ) : (
+                    <img className='cardImage' src={member.image} />
+                  )}
 
-      <h1>Members of {currentHouse}</h1>
-      <ul>
-        {!classmates ? (
-          <p>Loading...</p>
-        ) : (
-          classmates.map((member, i) => (
-            <div key={i}>
-              <h2>{member.name}</h2>
-              {!member.image ? (
-                <img
-                  width='150px'
-                  src={require('../assets/houseCrests/' +
-                    currentHouse +
-                    '.webp')}
-                  alt={currentHouse + ' crest'}
-                />
-              ) : (
-                <img width='150px' src={member.image} />
-              )}
-
-              <p>Ancestry: {member.ancestry}</p>
-              <p>Patronus: {member.patronus}</p>
-              <p>---</p>
-            </div>
-          ))
-        )}
-      </ul>
+                  <p>
+                    <strong>Ancestry:</strong> {member.ancestry}
+                  </p>
+                  <p>
+                    <strong>Patronus:</strong> {member.patronus}
+                  </p>
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
