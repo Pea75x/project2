@@ -14,9 +14,11 @@ function MyHouse() {
   return (
     <>
       <Nav />
-      <h1>Welcome to {currentHouse}</h1>
-      <img src={Gryffindor} alt='logo' />
-
+      <h1>Welcome to {currentHouse}!</h1>
+      <img
+        src={require('../assets/houseCrests/' + currentHouse + '.webp')}
+        alt={currentHouse + ' crest'}
+      />
       <button onClick={reSort}>Re-sort</button>
     </>
   );
