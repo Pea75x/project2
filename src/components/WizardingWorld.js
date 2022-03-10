@@ -17,6 +17,13 @@ function WizardingWorld() {
       return axios.get(`${endPoint}/${buttonState}`);
     }
   }
+  function hasHouse(person) {
+    if (person.house) {
+      return require('../assets/houseCrests/' + person.house + '.webp');
+    } else {
+      return require('../assets/Sorting_Hat.webp');
+    }
+  }
 
   function radioButtonChange(e) {
     setButtonState(e.target.value);
@@ -44,7 +51,7 @@ function WizardingWorld() {
           type='radio'
           name='all'
           value=''
-          checked={buttonState === 'all'}
+          checked={buttonState === ''}
           className='radio-button'
           onChange={radioButtonChange}
         />
@@ -77,16 +84,10 @@ function WizardingWorld() {
           <p>Loading...</p>
         ) : (
           classmates.map((member, i) => (
-            <div key={member[i]}>
+            <div key={i}>
               <h2>{member.name}</h2>
               {!member.image ? (
-                <img
-                  width='150px'
-                  src={require('../assets/houseCrests/' +
-                    currentHouse +
-                    '.webp')}
-                  alt={currentHouse + ' crest'}
-                />
+                <img width='150px' src={hasHouse(member)} alt={'crest'} />
               ) : (
                 <img width='150px' src={member.image} />
               )}

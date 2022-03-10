@@ -27,24 +27,25 @@ function Classmates() {
   return (
     <>
       <Nav />
+
       <h1>Members of {currentHouse}</h1>
       <ul>
         {!classmates ? (
           <p>Loading...</p>
         ) : (
           classmates.map((member, i) => (
-            <div key={member[i]}>
+            <div key={i}>
               <h2>{member.name}</h2>
               {!member.image ? (
                 <img
-                  width="150px"
+                  width='150px'
                   src={require('../assets/houseCrests/' +
                     currentHouse +
                     '.webp')}
                   alt={currentHouse + ' crest'}
                 />
               ) : (
-                <img width="150px" src={member.image} />
+                <img width='150px' src={member.image} />
               )}
 
               <p>Ancestry: {member.ancestry}</p>
