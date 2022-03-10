@@ -3,14 +3,19 @@ import axios from 'axios';
 
 import Nav from './Nav';
 function WizardingWorld() {
-  const [buttonState, setButtonState] = React.useState('all');
+  const [buttonState, setButtonState] = React.useState('');
+  const currentHouse = localStorage.getItem('myHouse');
 
   const endPoint = `http://hp-api.herokuapp.com/api/characters`;
 
   const [classmates, setClassmates] = React.useState(null);
 
   function getClassmates() {
-    return axios.get(`${endPoint}`);
+    if (buttonState === undefined) {
+      return axios.get(`${endPoint}`);
+    } else {
+      return axios.get(`${endPoint}/${buttonState}`);
+    }
   }
 
   function radioButtonChange(e) {
@@ -18,55 +23,56 @@ function WizardingWorld() {
   }
 
   React.useEffect(() => {
-    const getData = async () => {
+    const getData = async (search) => {
       try {
-        const { data } = await getClassmates();
+        const { data } = await getClassmates(search);
         setClassmates(data);
       } catch (err) {
         console.error(err);
       }
     };
     getData();
-  }, []);
+  }, [buttonState]);
 
+  console.log(classmates);
   return (
     <>
       <Nav />
       <h1>The Wizarding World</h1>
       <label>
         <input
-          type="radio"
-          name="all"
-          value="all"
+          type='radio'
+          name='all'
+          value=''
           checked={buttonState === 'all'}
-          className="radio-button"
+          className='radio-button'
           onChange={radioButtonChange}
         />
         All
       </label>
       <label>
         <input
-          type="radio"
-          name="students"
-          value="students"
+          type='radio'
+          name='students'
+          value='students'
           checked={buttonState === 'students'}
-          className="radio-button"
+          className='radio-button'
           onChange={radioButtonChange}
         />
         Students
       </label>
       <label>
         <input
-          type="radio"
-          name="staff"
-          value="staff"
+          type='radio'
+          name='staff'
+          value='staff'
           checked={buttonState === 'staff'}
-          className="radio-button"
+          className='radio-button'
           onChange={radioButtonChange}
         />
         Staff
       </label>
-      {/* <ul>
+      <ul>
         {!classmates ? (
           <p>Loading...</p>
         ) : (
@@ -75,14 +81,14 @@ function WizardingWorld() {
               <h2>{member.name}</h2>
               {!member.image ? (
                 <img
-                  width="150px"
+                  width='150px'
                   src={require('../assets/houseCrests/' +
                     currentHouse +
                     '.webp')}
                   alt={currentHouse + ' crest'}
                 />
               ) : (
-                <img width="150px" src={member.image} />
+                <img width='150px' src={member.image} />
               )}
 
               <p>Ancestry: {member.ancestry}</p>
@@ -91,7 +97,7 @@ function WizardingWorld() {
             </div>
           ))
         )}
-      </ul> */}
+      </ul>
     </>
   );
 }
