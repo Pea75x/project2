@@ -21,7 +21,7 @@ function WizardingWorld() {
     if (person.house) {
       return require('../assets/houseCrests/' + person.house + '.webp');
     } else {
-      return require('../assets/Sorting_Hat.webp');
+      return require('../assets/NoHouse.webp');
     }
   }
 
@@ -45,60 +45,73 @@ function WizardingWorld() {
   return (
     <>
       <Nav />
-      <h1>The Wizarding World</h1>
-      <label>
-        <input
-          type='radio'
-          name='all'
-          value=''
-          checked={buttonState === ''}
-          className='radio-button'
-          onChange={radioButtonChange}
-        />
-        All
-      </label>
-      <label>
-        <input
-          type='radio'
-          name='students'
-          value='students'
-          checked={buttonState === 'students'}
-          className='radio-button'
-          onChange={radioButtonChange}
-        />
-        Students
-      </label>
-      <label>
-        <input
-          type='radio'
-          name='staff'
-          value='staff'
-          checked={buttonState === 'staff'}
-          className='radio-button'
-          onChange={radioButtonChange}
-        />
-        Staff
-      </label>
-      <ul>
-        {!classmates ? (
-          <p>Loading...</p>
-        ) : (
-          classmates.map((member, i) => (
-            <div key={i}>
-              <h2>{member.name}</h2>
-              {!member.image ? (
-                <img width='150px' src={hasHouse(member)} alt={'crest'} />
-              ) : (
-                <img width='150px' src={member.image} />
-              )}
+      <section className="main-page" id={'mainPage-' + currentHouse}>
+        <div className="container" id={'container-' + currentHouse}>
+          <h1 className="wizard-title" id={'title' + currentHouse}>
+            The Whole Wizarding World
+          </h1>
+          <label>
+            <input
+              type="radio"
+              name="all"
+              value=""
+              checked={buttonState === ''}
+              className="radio-button"
+              onChange={radioButtonChange}
+            />
+            All
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="students"
+              value="students"
+              checked={buttonState === 'students'}
+              className="radio-button"
+              onChange={radioButtonChange}
+            />
+            Students
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="staff"
+              value="staff"
+              checked={buttonState === 'staff'}
+              className="radio-button"
+              onChange={radioButtonChange}
+            />
+            Staff
+          </label>
+          <div className="card-containers">
+            {!classmates ? (
+              <p>Loading...</p>
+            ) : (
+              classmates.map((member, i) => (
+                <div className="card" key={i} id={'house-' + member.house}>
+                  <h2>{member.name}</h2>
+                  {!member.image ? (
+                    <img
+                      src={hasHouse(member)}
+                      alt={'crest'}
+                      className="cardImage"
+                    />
+                  ) : (
+                    <img src={member.image} className="cardImage" />
+                  )}
 
-              <p>Ancestry: {member.ancestry}</p>
-              <p>Patronus: {member.patronus}</p>
-              <p>---</p>
-            </div>
-          ))
-        )}
-      </ul>
+                  <p>
+                    <span className="bold">Patronus: </span>
+                    <span className="thin">
+                      {!member.patronus ? 'None' : member.patronus}
+                    </span>
+                  </p>
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
