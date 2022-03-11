@@ -86,6 +86,7 @@ button:hover {
 #mainPage-Slytherin {
   background-image: url('../assets/SLYTHERINFANCY.jpeg');
   background-size: contain;
+  min-height: 100vh;
 }
 #titleSlytherin {
   color: #aaaaaa;
@@ -102,6 +103,7 @@ button:hover {
 }
 #mainPage-Gryffindor {
   background-image: url('../assets/GRYFINDORFANCY.webp');
+  min-height: 100vh;
 }
 #titleGryffindor {
   color: #eeba30;
@@ -118,6 +120,7 @@ button:hover {
 }
 #mainPage-Hufflepuff {
   background-image: url('../assets/HUFFLEPUFF.jpeg');
+  min-height: 100vh;
 }
 #titleHufflepuff {
   color: black;
@@ -140,6 +143,7 @@ button:hover {
 }
 #mainPage-Ravenclaw {
   background-image: url('../assets/RAVENCLAWFANCY.jpeg');
+  min-height: 100vh;
 }
 #navRavenclaw {
   background-color: #0e1a40;
