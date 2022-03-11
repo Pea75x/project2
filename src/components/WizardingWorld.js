@@ -21,7 +21,7 @@ function WizardingWorld() {
     if (person.house) {
       return require('../assets/houseCrests/' + person.house + '.webp');
     } else {
-      return require('../assets/Sorting_Hat.webp');
+      return require('../assets/NoHouse.webp');
     }
   }
 
@@ -88,15 +88,24 @@ function WizardingWorld() {
               <p>Loading...</p>
             ) : (
               classmates.map((member, i) => (
-                <div className="card" key={i}>
+                <div className="card" key={i} id={'house-' + member.house}>
                   <h2>{member.name}</h2>
                   {!member.image ? (
-                    <img width="150px" src={hasHouse(member)} alt={'crest'} />
+                    <img
+                      src={hasHouse(member)}
+                      alt={'crest'}
+                      className="cardImage"
+                    />
                   ) : (
-                    <img width="150px" src={member.image} />
+                    <img src={member.image} className="cardImage" />
                   )}
 
-                  <p>Patronus: {member.patronus}</p>
+                  <p>
+                    <span className="bold">Patronus: </span>
+                    <span className="thin">
+                      {!member.patronus ? 'None' : member.patronus}
+                    </span>
+                  </p>
                 </div>
               ))
             )}
