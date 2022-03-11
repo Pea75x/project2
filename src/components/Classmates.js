@@ -29,13 +29,15 @@ function Classmates() {
       <Nav />
       <section className='main-page' id={'mainPage-' + currentHouse}>
         <div className='container' id={'container-' + currentHouse}>
-          <h1 className='wizard-title'>Members of {currentHouse}</h1>
+          <h1 className='wizard-title' id={'title' + currentHouse}>
+            Members of {currentHouse}
+          </h1>
           <div className='card-containers'>
             {!classmates ? (
               <p>Loading...</p>
             ) : (
               classmates.map((member, i) => (
-                <div className='card' key={i}>
+                <div className='card' key={i} id={currentHouse}>
                   <h2>{member.name}</h2>
                   {!member.image ? (
                     <img
@@ -50,10 +52,12 @@ function Classmates() {
                   )}
 
                   <p>
-                    <strong>Ancestry:</strong> {member.ancestry}
+                    <span className='bold'>Ancestry:</span>
+                    <span className='thin'>{member.ancestry}</span>
                   </p>
                   <p>
-                    <strong>Patronus:</strong> {member.patronus}
+                    <span className='bold'>Patronus:</span>
+                    <span className='thin'>{member.patronus}</span>
                   </p>
                 </div>
               ))

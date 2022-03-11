@@ -59,34 +59,34 @@ function Game() {
     return (
       <>
         <Nav />
-        <div className="gameBackground">
-          <div className="game-container">
+        <div className='gameBackground'>
+          <div className='game-container'>
             <h1>Whos House is whos?</h1>
-            <div className="pointsText">{pointsText}</div>
+            <div className='pointsText'>{pointsText}</div>
             {randomPerson === undefined ? (
-              <button onClick={getNextCard} className="playGame game-button">
+              <button onClick={getNextCard} className='playGame game-button'>
                 Play Game
               </button>
             ) : (
-              <div className="gameStart">
-                <div className="game-card">
+              <div className='gameStart'>
+                <div className='game-card'>
                   <h2>{potterData[randomPerson].name}</h2>
                   <img
                     src={potterData[randomPerson].image}
                     alt={potterData[randomPerson].name}
                   />
                 </div>
-                <div className="houseButtons">
-                  <button className="game-button" onClick={checkAnswer}>
+                <div className='houseButtons'>
+                  <button className='game-button' onClick={checkAnswer}>
                     Gryffindor
                   </button>
-                  <button className="game-button" onClick={checkAnswer}>
+                  <button className='game-button' onClick={checkAnswer}>
                     Hufflepuff
                   </button>
-                  <button className="game-button" onClick={checkAnswer}>
+                  <button className='game-button' onClick={checkAnswer}>
                     Ravenclaw
                   </button>
-                  <button className="game-button" onClick={checkAnswer}>
+                  <button className='game-button' onClick={checkAnswer}>
                     Slytherin
                   </button>
                 </div>

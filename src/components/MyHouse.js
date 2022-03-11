@@ -1,9 +1,11 @@
 import React from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import Nav from './Nav';
-import Gryffindor from '../assets/houseCrests/Gryffindor.webp';
+
+import nameBackDrop from '../assets/personalised-name.png';
 
 function MyHouse() {
+  const myName = localStorage.getItem('myName');
   const currentHouse = localStorage.getItem('myHouse');
   const navigate = useNavigate();
 
@@ -14,12 +16,27 @@ function MyHouse() {
   return (
     <>
       <Nav />
-      <h1>Welcome to {currentHouse}!</h1>
-      <img
-        src={require('../assets/houseCrests/' + currentHouse + '.webp')}
-        alt={currentHouse + ' crest'}
-      />
-      <button onClick={reSort}>Re-sort</button>
+      <div className='myHousePage' id={'myHouseBackground' + currentHouse}>
+        <div className='paperBackground'>
+          <div className='nameOnMap'>
+            <div className='nameText'>{myName}</div>
+            <img
+              src={nameBackDrop}
+              alt='name back drop'
+              className='nameBackDrop'
+            />
+          </div>
+          <div id={'header' + currentHouse} className='container'>
+            <h1>Welcome to {currentHouse}!</h1>
+            <img
+              src={require('../assets/houseCrests/' + currentHouse + '.webp')}
+              alt={currentHouse + ' crest'}
+              className='myBadge'
+            />
+            <button onClick={reSort}>Re-sort</button>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

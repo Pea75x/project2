@@ -3,8 +3,14 @@
 
 body {
   font-family: 'Harry Potter', sans-serif;
+  color: black;
 }
-
+.wizard-title {
+  font-size: 65px;
+  text-align: center;
+  color: black;
+  padding-top: 80px;
+}
 .card {
   width: calc(25% - 20px);
   display: flex;
@@ -12,6 +18,7 @@ body {
   align-items: center;
   justify-content: space-around;
   margin-bottom: 10px;
+  box-shadow: 5px 10px 10px #00000075;
 
   h2 {
     font-size: 25px;
@@ -26,36 +33,215 @@ body {
   justify-content: space-around;
   border-radius: 5px;
 
-  .griffindor {
+  #Griffindor {
   }
-  .slytherin {
+  #Slytherin {
   }
+}
+#Ravenclaw {
+  background-color: #222f5b;
+  color: #946b2d;
+}
+.bold {
+  font-weight: bolder;
+}
+.thin {
+  font-weight: lighter;
 }
 .container {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  box-shadow: 5px 10px #888888;
 
   h1 {
-    font-size: 40px;
+    font-size: 60px;
     padding: 20px;
   }
+}
+
+.myBadge {
+  width: 300px;
+}
+button {
+  padding: 20px 30px;
+  margin: 10px;
+  background-color: #ffffff2f;
+  border: none;
+  font-family: 'Harry Potter', sans-serif;
+  font-size: 30px;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: rgba(255, 255, 255, 0.493);
 }
 
 #container-Slytherin {
   background-color: green;
 }
+
+#navSlytherin {
+  background-color: #1a472a;
+  .navbar-item {
+    color: white;
+  }
+  a:hover {
+    background-color: #2a623d;
+  }
+}
 #container-Gryffindor {
   background-color: red;
+}
+#navGryffindor {
+  background-color: #740001;
+
+  .navbar-item {
+    color: #eeba30;
+  }
+  a:hover {
+    background-color: #ae0001;
+  }
 }
 #container-hufflepuff {
   background-color: yellow;
 }
-#container-Ravenclaw {
-  background-color: blue;
+#navHufflepuff {
+  background-color: #ffed86;
+  .navbar-item {
+    color: black;
+  }
+  a:hover {
+    background-color: #fff4b1;
+  }
+}
+#titleRavenclaw {
+  color: lightgray;
 }
 #mainPage-Ravenclaw {
-  background-color: lightblue;
+  background-image: url('../assets/RAVENCLAWFANCY.jpeg');
+}
+#navRavenclaw {
+  background-color: #0e1a40;
+  .navbar-item {
+    color: #946b2d;
+  }
+  a:hover {
+    background-color: #222f5b;
+  }
+}
+
+.myHousePage {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  h1 {
+    padding-top: 50px;
+  }
+}
+#myHouseBackgroundHufflepuff {
+  background-image: url('../assets/HUFFLEPUFF.jpeg');
+}
+#myHouseBackgroundSlytherin {
+  background-image: url('../assets/SLYTHERINFANCY.jpeg');
+}
+#myHouseBackgroundGryffindor {
+  background-image: url('../assets/GRYFINDORFANCY.webp');
+}
+#myHouseBackgroundRavenclaw {
+  background-color: #0e1a40;
+  background-image: url('../assets/RAVENCLAWFANCY.jpeg');
+  background-repeat: repeat;
+  background-size: auto;
+}
+.paperBackground {
+  background-image: url('../assets/PARCHMENT.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 80%;
+  margin: auto;
+}
+.hatBackground {
+  background-image: url('../assets/harrypottergreathall.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.hatPage {
+  background-image: url('../assets/PARCHMENT.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 80%;
+  margin: auto;
+  height: 100vh;
+  color: black;
+  text-align: center;
+
+  h2 {
+    font-size: 25px;
+  }
+
+  .hatHolder {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    label {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      align-items: center;
+      font-size: 30px;
+
+      input {
+        line-height: 30px;
+        width: 100%;
+        margin-bottom: 50px;
+      }
+    }
+  }
+  .hatAndButton {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sortingHat {
+    width: 500px;
+    margin: auto;
+    animation: pulse 3s ease infinite;
+  }
+}
+.nameBackDrop {
+  width: 320px;
+}
+.nameOnMap {
+  position: absolute;
+  right: 250px;
+  top: 450px;
+
+  .nameText {
+    position: absolute;
+
+    right: 20px;
+    top: 65px;
+    width: 200px;
+    text-align: center;
+    color: black;
+    transform: rotate(-18deg);
+    font-size: 23px;
+  }
+}
+.navbar-brand {
+  justify-content: space-around;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
