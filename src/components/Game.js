@@ -77,16 +77,16 @@ function Game() {
                   />
                 </div>
                 <div className='houseButtons'>
-                  <button className='game-button' onClick={checkAnswer}>
+                  <button className='game-button gbutton' onClick={checkAnswer}>
                     Gryffindor
                   </button>
-                  <button className='game-button' onClick={checkAnswer}>
+                  <button className='game-button hbutton' onClick={checkAnswer}>
                     Hufflepuff
                   </button>
-                  <button className='game-button' onClick={checkAnswer}>
+                  <button className='game-button rbutton' onClick={checkAnswer}>
                     Ravenclaw
                   </button>
-                  <button className='game-button' onClick={checkAnswer}>
+                  <button className='game-button sbutton' onClick={checkAnswer}>
                     Slytherin
                   </button>
                 </div>
@@ -100,9 +100,13 @@ function Game() {
     return (
       <>
         <Nav />
-        <div>
-          <h1>Game Over!</h1>
-          <p>{points} points</p>
+        <div className='gameBackground'>
+          <div className='gameOver'>
+            <h1>Game Over!</h1>
+            <p>
+              {points} points to {currentHouse}
+            </p>
+          </div>
         </div>
       </>
     );

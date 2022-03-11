@@ -33,9 +33,16 @@ body {
   justify-content: space-around;
   border-radius: 5px;
 
-  #Griffindor {
+  #Gryffindor {
+    background-color: #380d05;
+    color: white;
   }
   #Slytherin {
+    background-color: #122416;
+    color: #aaaaaa;
+  }
+  #Hufflepuff {
+    background-color: #fff4b1;
   }
 }
 #Ravenclaw {
@@ -76,8 +83,12 @@ button:hover {
   background-color: rgba(255, 255, 255, 0.493);
 }
 
-#container-Slytherin {
-  background-color: green;
+#mainPage-Slytherin {
+  background-image: url('../assets/SLYTHERINFANCY.jpeg');
+  background-size: contain;
+}
+#titleSlytherin {
+  color: #aaaaaa;
 }
 
 #navSlytherin {
@@ -89,21 +100,31 @@ button:hover {
     background-color: #2a623d;
   }
 }
-#container-Gryffindor {
-  background-color: red;
+#mainPage-Gryffindor {
+  background-image: url('../assets/GRYFINDORFANCY.webp');
+}
+#titleGryffindor {
+  color: #eeba30;
 }
 #navGryffindor {
   background-color: #740001;
-
   .navbar-item {
     color: #eeba30;
   }
+
   a:hover {
     background-color: #ae0001;
   }
 }
-#container-hufflepuff {
-  background-color: yellow;
+#mainPage-Hufflepuff {
+  background-image: url('../assets/HUFFLEPUFF.jpeg');
+}
+#titleHufflepuff {
+  color: black;
+  background-image: url('../assets/scroll.png');
+  background-size: cover;
+  line-height: 100px;
+  width: 800px;
 }
 #navHufflepuff {
   background-color: #ffed86;
@@ -244,4 +265,78 @@ button:hover {
   100% {
     transform: scale(1);
   }
+}
+.gameBackground {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../assets/hogwarts.jpeg');
+  background-size: cover;
+  background-position: bottom;
+}
+
+.game-container {
+  width: 50%;
+  min-width: 600px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 550px;
+
+  h1 {
+    font-size: 50px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+}
+.gameStart {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.game-card {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.219);
+  border-radius: 7px;
+  height: 300px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+  img {
+    height: 200px;
+  }
+}
+.gbutton:hover {
+  background-color: #7400023a;
+  color: white;
+}
+.hbutton:hover {
+  background-color: #fff5b146;
+}
+.rbutton:hover {
+  background-color: #2a623d41;
+  color: white;
+}
+.sbutton:hover {
+  background-color: #222f5b2d;
+  color: white;
+}
+.houseButtons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 5px 0 20px 0;
+}
+.gameOver {
+  font-size: 80px;
+  text-align: center;
 }
