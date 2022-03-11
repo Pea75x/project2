@@ -7,8 +7,18 @@ function WizardingWorld() {
   const currentHouse = localStorage.getItem('myHouse');
 
   const endPoint = `http://hp-api.herokuapp.com/api/characters`;
-
   const [classmates, setClassmates] = React.useState(null);
+
+  const handleSearch = (event) => {
+    let value = event.target.value;
+    let result = [];
+    if (classmates) {
+      result = classmates.filter((data) => {
+        return data.name.search(value) !== -1;
+      });
+      setClassmates(result);
+    }
+  };
 
   function getClassmates() {
     if (buttonState === undefined) {
@@ -41,7 +51,7 @@ function WizardingWorld() {
     getData();
   }, [buttonState]);
 
-  console.log(classmates);
+  // console.log(classmates);
   return (
     <>
       <Nav />
@@ -84,6 +94,10 @@ function WizardingWorld() {
               />
               Staff
             </label>
+            <div>
+              <label>Search (beta):</label>
+              <input type="text" onChange={(event) => handleSearch(event)} />
+            </div>
           </div>
           <div className="card-containers">
             {!classmates ? (
