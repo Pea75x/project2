@@ -340,3 +340,54 @@ button:hover {
   font-size: 80px;
   text-align: center;
 }
+#radio-wrap-Hufflepuff {
+  background-color: #ffed86;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+#radio-wrap-Gryffindor {
+  background-color: #740001;
+  color: #eeba30;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+#radio-wrap-Slytherin {
+  background-color: #1a472a;
+  color: #aaaaaa;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+#radio-wrap-Ravenclaw {
+  background-color: #0e1a40;
+  color: #aaaaaa;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+label {
+  padding: 0px 10px;
+}
+
+#house-Gryffindor {
+  background-color: #740001;
+  color: white;
+}
+#house-Hufflepuff {
+  background-color: #ffed86;
+  color: black;
+}
+#house-Slytherin {
+  background-color: #1a472a;
+  color: white;
+}
+#house-Ravenclaw {
+  background-color: #0e1a40;
+  color: white;
+}

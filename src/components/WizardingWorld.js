@@ -48,41 +48,43 @@ function WizardingWorld() {
       <section className="main-page" id={'mainPage-' + currentHouse}>
         <div className="container" id={'container-' + currentHouse}>
           <h1 className="wizard-title" id={'title' + currentHouse}>
-            The Whole Wizarding World
+            The Wizarding World
           </h1>
-          <label>
-            <input
-              type="radio"
-              name="all"
-              value=""
-              checked={buttonState === ''}
-              className="radio-button"
-              onChange={radioButtonChange}
-            />
-            All
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="students"
-              value="students"
-              checked={buttonState === 'students'}
-              className="radio-button"
-              onChange={radioButtonChange}
-            />
-            Students
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="staff"
-              value="staff"
-              checked={buttonState === 'staff'}
-              className="radio-button"
-              onChange={radioButtonChange}
-            />
-            Staff
-          </label>
+          <div id={'radio-wrap-' + currentHouse}>
+            <label>
+              <input
+                type="radio"
+                name="all"
+                value=""
+                checked={buttonState === ''}
+                className="radio-button"
+                onChange={radioButtonChange}
+              />
+              All
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="students"
+                value="students"
+                checked={buttonState === 'students'}
+                className="radio-button"
+                onChange={radioButtonChange}
+              />
+              Students
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="staff"
+                value="staff"
+                checked={buttonState === 'staff'}
+                className="radio-button"
+                onChange={radioButtonChange}
+              />
+              Staff
+            </label>
+          </div>
           <div className="card-containers">
             {!classmates ? (
               <p>Loading...</p>
