@@ -55,70 +55,70 @@ function WizardingWorld() {
   return (
     <>
       <Nav />
-      <section className="main-page" id={'mainPage-' + currentHouse}>
-        <div className="container" id={'container-' + currentHouse}>
-          <h1 className="wizard-title" id={'title' + currentHouse}>
+      <section className='main-page' id={'mainPage-' + currentHouse}>
+        <div className='container' id={'container-' + currentHouse}>
+          <h1 className='wizard-title' id={'title' + currentHouse}>
             The Wizarding World
           </h1>
           <div id={'radio-wrap-' + currentHouse}>
             <label>
               <input
-                type="radio"
-                name="all"
-                value=""
+                type='radio'
+                name='all'
+                value=''
                 checked={buttonState === ''}
-                className="radio-button"
+                className='radio-button'
                 onChange={radioButtonChange}
               />
               All
             </label>
             <label>
               <input
-                type="radio"
-                name="students"
-                value="students"
+                type='radio'
+                name='students'
+                value='students'
                 checked={buttonState === 'students'}
-                className="radio-button"
+                className='radio-button'
                 onChange={radioButtonChange}
               />
               Students
             </label>
             <label>
               <input
-                type="radio"
-                name="staff"
-                value="staff"
+                type='radio'
+                name='staff'
+                value='staff'
                 checked={buttonState === 'staff'}
-                className="radio-button"
+                className='radio-button'
                 onChange={radioButtonChange}
               />
               Staff
             </label>
             <div>
-              <label>Search (beta):</label>
-              <input type="text" onChange={(event) => handleSearch(event)} />
+              <label>Search:</label>
+              <input type='text' onChange={(event) => handleSearch(event)} />
             </div>
           </div>
-          <div className="card-containers">
+          <div className='card-containers'>
             {!classmates ? (
               <p>Loading...</p>
             ) : (
               classmates.map((member, i) => (
-                <div className="card" key={i} id={'house-' + member.house}>
+                <div className='card' key={i} id={'house-' + member.house}>
                   <h2>{member.name}</h2>
                   {!member.image ? (
                     <img
                       src={hasHouse(member)}
                       alt={'crest'}
-                      className="cardImage"
+                      className='cardImage'
                     />
                   ) : (
-                    <img src={member.image} className="cardImage" />
+                    <img src={member.image} className='cardImage' />
                   )}
 
                   <p>
-                    <span className="bold">Patronus: </span>
-                    <span className="thin">
+                    <span className='bold'>Patronus: </span>
+                    <span className='thin'>
                       {!member.patronus ? 'None' : member.patronus}
                     </span>
                   </p>

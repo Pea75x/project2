@@ -3,9 +3,8 @@ import axios from 'axios';
 
 import Nav from './Nav';
 
-const currentHouse = localStorage.getItem('myHouse');
-
 function Game() {
+  const currentHouse = localStorage.getItem('myHouse');
   const endPoint = 'http://hp-api.herokuapp.com/api/characters';
   const [potterData, setPotterData] = React.useState(null);
   const [randomPerson, setRandomPerson] = React.useState(undefined);
