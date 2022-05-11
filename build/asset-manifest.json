@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2126d85c.css",
+    "main.js": "/static/js/main.1614aab9.js",
+    "static/media/Sorting_Hat.webp": "/static/media/Sorting_Hat.e4bcd4a5bae8d1e3b525.webp",
+    "static/media/PARCHMENT.png": "/static/media/PARCHMENT.6fd0aadab90930a62356.png",
+    "static/media/hogwarts.jpeg": "/static/media/hogwarts.90c30d9bd9f0fac54ec9.jpeg",
+    "static/media/HUFFLEPUFF.jpeg": "/static/media/HUFFLEPUFF.04916e298d86ee1490a8.jpeg",
+    "static/media/NoHouse.webp": "/static/media/NoHouse.7b34ac32364df68670fb.webp",
+    "static/media/personalised-name.png": "/static/media/personalised-name.1d9daa7be9e5ec6d51b0.png",
+    "static/media/harrypottergreathall.jpeg": "/static/media/harrypottergreathall.529a5ca1e06cfcafb36d.jpeg",
+    "static/media/scroll.png": "/static/media/scroll.d02ffd447d7c3d52d2e2.png",
+    "static/media/SLYTHERINFANCY.jpeg": "/static/media/SLYTHERINFANCY.6346767d497b358f9801.jpeg",
+    "static/media/GRYFINDORFANCY.webp": "/static/media/GRYFINDORFANCY.ee38a71bef738b15a2a3.webp",
+    "static/media/RAVENCLAWFANCY.jpeg": "/static/media/RAVENCLAWFANCY.dac06eff468fee21865a.jpeg",
+    "static/media/Hufflepuff.webp": "/static/media/Hufflepuff.1f2287a95a9b8d1e63d6.webp",
+    "static/media/Gryffindor.webp": "/static/media/Gryffindor.8355e4f01ec2452c4804.webp",
+    "static/media/Slytherin.webp": "/static/media/Slytherin.92d77aaeadfaf37871b3.webp",
+    "static/media/Ravenclaw.webp": "/static/media/Ravenclaw.063cdb514b7a08de149f.webp",
+    "index.html": "/index.html",
+    "static/media/None.webp": "/static/media/None.31d6cfe0d16ae931b73c.webp",
+    "main.2126d85c.css.map": "/static/css/main.2126d85c.css.map",
+    "main.1614aab9.js.map": "/static/js/main.1614aab9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2126d85c.css",
+    "static/js/main.1614aab9.js"
+  ]
+}
