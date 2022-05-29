@@ -89,6 +89,12 @@ function checkAnswer(event) {
 
 Here I am comparing the button the user clicked with the characters house on the current card. Once we have added or deducted points, we notify the user if they answered correctly, and then get the next card.
 
+## Wins
+
+I think we did well to make it an interactive user experience with the house points, house decoration and the user’s name.
+
+I also think we worked well as a team, communication was a big factor in this. We would code together on zoom, and then split off onto seperate tasks. Once we came back together we would talk through the code we have done and merge on Github.
+
 ## Known bugs
 
 Our search bar on the wizarding page has a few issues that need sorting. Firstly, it is case sensitive, which means that if I typed "ron" it wouldnt give us Ron Weasley in the results. Secondly, once you remove the text from your search to type a new word, it doesnt go back to all of the results.
